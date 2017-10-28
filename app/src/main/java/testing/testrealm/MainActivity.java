@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         textListener(bottomNum);
 
     }
-    public void textListener(EditText editTextObject) {
+    private void textListener(EditText editTextObject) {
         editTextObject.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -47,13 +47,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void sumOfAllFields(){
+    private void sumOfAllFields(){
         total = getIntOfInput(topNum) + getIntOfInput(middleNum) + getIntOfInput(bottomNum);
     }
         public int getIntOfInput(EditText number){
             return number.getText().toString().equals("") ? 0 : Integer.parseInt(number.getText().toString());
         }
-    public void displayTotal() {
+    private void displayTotal() {
         output = (TextView)findViewById(R.id.total);
         String convertedTotal = String.valueOf(total);
         output.setText(convertedTotal);
@@ -62,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void theToasting(CharSequence message) {
+    private void theToasting(CharSequence message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
-    public void theToasting(String message) {
+    private void theToasting(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
