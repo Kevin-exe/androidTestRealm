@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void textListener(EditText editTextObject) {
         editTextObject.addTextChangedListener(new TextWatcher() {
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
@@ -50,9 +51,10 @@ public class MainActivity extends AppCompatActivity {
     private void sumOfAllFields(){
         total = getIntOfInput(topNum) + getIntOfInput(middleNum) + getIntOfInput(bottomNum);
     }
-        public int getIntOfInput(EditText number){
-            return number.getText().toString().equals("") ? 0 : Integer.parseInt(number.getText().toString());
-        }
+
+    public int getIntOfInput(EditText number){
+        return number.getText().toString().equals("") ? 0 : Integer.parseInt(number.getText().toString());
+    }
     private void displayTotal() {
         output = (TextView)findViewById(R.id.total);
         String convertedTotal = String.valueOf(total);
